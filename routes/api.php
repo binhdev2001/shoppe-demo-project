@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\ProductsController;
+use App\Http\Controllers\Api\BrandsController;
+use App\Http\Controllers\Api\CategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::apiResource('/products', ProductsController::class );
+Route::apiResource('/brands', BrandsController::class );
+Route::apiResource('/categories', CategoriesController::class );
